@@ -6,7 +6,7 @@ Description of MATLAB files
 * "Kernel_system.mat" constructs each SSS method variant and compares the reconstruction of evoked data collectected at University of Washington and processed using MNE-Python
 * "UCL_system.mat" constructs each SSS method variant and compares the reconstruction of raw data collectected at UCL
 * "sensor_deviation.mat" uses the MEGIN/Elekta Neuromag system to simulated a deviated on-scalp OPM system of magnetometers with all SSS variants and simulated data
-* "SSS_function" folder contains necessary function for file i/o as well as for SSS,
+* "SSS_function" folder contains necessary functions for file i/o as well as for SSS implementation following Samu Taulu et al https://arxiv.org/abs/physics/0401166
 * "multi_sss.mat" is implementation of novel mSSS
 
 Necessary packages and other files
