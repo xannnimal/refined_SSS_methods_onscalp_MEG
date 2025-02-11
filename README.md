@@ -15,4 +15,4 @@ Necessary packages and other files
 * Spheroidal harmonic functions "spm_ipharm.mat" and "spm_epharm.mat" available from Tim Tierney et al. through SPM on GitHub at https://github.com/spm
 * For the MEGIN/Elekta Neuromag system, the raw file "sample_audvis_raw.fif" for SQUID sensor geometry is obtained on MNE-Python
 * Data and sensor geometry for QuSpin helmet at Nottingham can be obtained via Niall Holmes et al. with corresponding reference https://ieeexplore.ieee.org/document/10685146
-*UCL data and corresponding tutorial is publicaly available online on MNE-Python at https://mne.tools/stable/auto_tutorials/preprocessing/80_opm_processing.html
+* UCL data and corresponding tutorial is publicaly available online on MNE-Python at https://mne.tools/stable/auto_tutorials/preprocessing/80_opm_processing.html
