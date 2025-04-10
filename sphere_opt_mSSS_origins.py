@@ -48,8 +48,9 @@ for i in range(0,305):
     for j in range(0,3):
         trans_channel_pos[i,j]=channel_pos[i,j]+add_to[j]   
         
-################# from sphereopt.py
-bem_surf = mne.read_bem_surfaces(fname_bem) # Boundary Element Method: returns a list of dictionaries
+################# 
+# create BEM brain surfaces
+bem_surf = mne.read_bem_surfaces(fname_bem) 
 assert bem_surf[0]['id'] == mne.io.constants.FIFF.FIFFV_BEM_SURF_ID_HEAD
 assert bem_surf[2]['id'] == mne.io.constants.FIFF.FIFFV_BEM_SURF_ID_BRAIN
 scalp, _, inner_skull = bem_surf
@@ -66,7 +67,7 @@ print(f'Brain vedo:     {brain_volume * m3_to_cc:8.2f} cc')
 brain_vol = nib.load(subjects_dir / subject / 'mri' / 'brainmask.mgz')
 brain_rr = np.array(np.where(brain_vol.get_fdata())).T
 brain_rr = mne.transforms.apply_trans(brain_vol.header.get_vox2ras_tkr(), brain_rr) / 1000. #apply a transformation matrix
-del brain_vol #delete brain volume
+del brain_vol
 brain_rr = brain_rr[inside_skull(brain_rr)]
 vox_to_m3 = 1e-9
 brain_volume_vox = len(brain_rr) * vox_to_m3
@@ -152,6 +153,7 @@ for i in range(0,9):
     cart_points[i,0] = r*np.cos(rho) #z
 
 ################
+# Visualize VSH basis as spheres 
 plotter = pyvistaqt.BackgroundPlotter(
       shape=(1, 2), window_size=(1200, 300), #(1,3) for three sphere case
       editor=False, menu_bar=False, toolbar=False)
@@ -175,9 +177,8 @@ for ci, cs in enumerate((c_opt_1, c_opt_2)):
         plotter.add_mesh(sphere, opacity=0.5, color=color, **mesh_kwargs)
 plotter.show()
 
-# # Output 2-sphere case
+### Output origins of 2-origin VSH case
 # These centers are used for the mSSS basis
-
 for use in (c_opt_1, c_opt_2):
     centers = mne.transforms.apply_trans(mri_head_t, use.reshape(-1, 3))
     print(centers)
