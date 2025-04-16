@@ -4,7 +4,7 @@ Analysis scripts for "Refined SSS Methods for on-scalp MEG systems"
 Description of MATLAB files
 * "main_methods.mat" calculates metric comparisons and current dipole simulation results for each helmet system. 
 * "Kernel_system.mat" constructs each SSS method variant and compares the reconstruction of evoked data collectected at University of Washington and processed using MNE-Python
-* "UCL_system.mat" constructs each SSS method variant and compares the reconstruction of raw data collectected at UCL
+* "UCLOPM_system.mat" constructs each SSS method variant and compares the reconstruction of raw data collectected at UCL
 * "sensor_deviation.mat" uses the MEGIN/Elekta Neuromag system to simulated a deviated on-scalp OPM system of magnetometers with all SSS variants and simulated data
 * "SSS_function" folder contains necessary functions for file i/o as well as for SSS implementation following Samu Taulu et al https://arxiv.org/abs/physics/0401166
 * "multi_sss.mat" is implementation of novel mSSS
